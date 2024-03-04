@@ -1,0 +1,419 @@
+{
+	"namespace": "library",
+	"background_render": {
+		"type": "custom",
+		"renderer": "gradient_renderer",
+		"anchor_from": "bottom_middle",
+		"anchor_to": "bottom_middle",
+		"color1": "$color",
+		"color2": "$color"
+	},
+	"item_background": {
+		"type": "image",
+		"size": [
+			"100% - 13px",
+			"100% - 13px"
+		],
+		"offset": [
+			-3,
+			-3
+		],
+		"layer": 5,
+		"alpha": 0.8,
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"texture": "$item_bg2"
+	},
+	"item_slot_button": {
+		"size": [
+			25,
+			25
+		],
+		"type": "panel",
+		"$image_mode|default": "library.item_background",
+		"$default_auto_cell_ignored|default": false,
+		"$auto_cell_label|default": true,
+		"controls": [
+			{
+				"a1@focus_common.auto_items_template": {
+					"ignored": "$default_auto_cell_ignored",
+					"$auto_size": [
+						25,
+						25
+					],
+					"$cell_add": "common.empty",
+					"$super_collection_name": "container_items",
+					"$super_grid_item_template": "chest.chest_grid_item",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "chest.tells_type",
+							"source_property_name": "(not #toggle_state)",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"a2@focus_common.auto_items_template": {
+					"ignored": "$default_auto_cell_ignored",
+					"$auto_size": [
+						25,
+						25
+					],
+					"$cell_add": "common.empty",
+					"$super_collection_name": "inventory_items",
+					"$super_grid_item_template": "common.auto_grid_item_for_inventory",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "chest.tells_type",
+							"source_property_name": "#toggle_state",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"cell_type@$cell_type": {
+					"ignored": "(not $default_auto_cell_ignored)"
+				}
+			},
+			{
+				"add@$image_mode": {}
+			},
+			{
+				"item_background": {
+					"type": "image",
+					"size": [
+						"100% - 10px",
+						"100% - 10px"
+					],
+					"offset": [
+						2,
+						2
+					],
+					"layer": 10,
+					"alpha": 0.9,
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"texture": "$item_bg"
+				}
+			},
+			{
+				"label": {
+					"ignored": "$auto_cell_label",
+					"type": "label",
+					"text": "$item_name",
+					"font_scale_factor": 0.8,
+					"shadow": true,
+					"layer": 20,
+					"anchor_from": "bottom_middle",
+					"anchor_to": "bottom_middle",
+					"size": [
+						"default",
+						"default"
+					]
+				}
+			},
+			{
+				"tab_background": {
+					"type": "image",
+					"color": [
+						1,
+						0,
+						0
+					],
+					"alpha": 0.4,
+					"size": [
+						"100% - 1px",
+						"100% - 1px"
+					],
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"texture": "textures/ui/Black"
+				}
+			}
+		]
+	},
+	"light_toggle_button": {
+		"type": "panel",
+		"size": [
+			"100%",
+			"100%"
+		],
+		"controls": [
+			{
+				"inf_hover_button@common.inf_hover_button": {
+					"$hover_label": "单个槽物品搬运",
+					"$inf_hover_button_controls_offset": [
+						90,
+						-5
+					]
+				}
+			},
+			{
+				"button@common_toggles.light_text_toggle": {
+					"size": [
+						"100%",
+						"100%"
+					],
+					"layer": 5,
+					"alpha": 0,
+					"propagate_alpha": true,
+					"$button_text": "§r"
+				}
+			},
+			{
+				"background_off@library.background_bindings": {
+					"$color": [
+						1,
+						0,
+						0,
+						0.7
+					],
+					"$source_property_name": "(not #toggle_state)"
+				}
+			},
+			{
+				"background_on@library.background_bindings": {
+					"$color": [
+						0.08,
+						1,
+						0.07,
+						0.7
+					],
+					"$source_property_name": "#toggle_state"
+				}
+			},
+			{
+				"text": {
+					"type": "label",
+					"size": [
+						"default",
+						"default"
+					],
+					"layer": 7,
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"color": "white",
+					"text": "$text"
+				}
+			}
+		]
+	},
+	"chest_top_panel": {
+		"type": "stack_panel",
+		"orientation": "vertical",
+		"anchor_from": "top_left",
+		"anchor_to": "top_left",
+		"size": [
+			"100%",
+			"100%c"
+		],
+		"controls": [
+			{
+				"bottom@focus_common.chest_auto_items": {
+					"$panel_size|default": [
+						49,
+						17
+					],
+					"$auto_size|default": [
+						24,
+						17
+					]
+				}
+			},
+			{
+				"fill_1": {
+					"type": "panel",
+					"size": [
+						0,
+						1
+					]
+				}
+			},
+			{
+				"edit@focus_common.edit_box": {}
+			},
+			{
+				"fill_2": {
+					"type": "panel",
+					"size": [
+						0,
+						1
+					]
+				}
+			},
+			{
+				"panel@library.bottom_chest_top_panel": {}
+			}
+		]
+	},
+	"bottom_chest_top_panel": {
+		"type": "panel",
+		"size": [
+			"100%",
+			20
+		],
+		"controls": [
+			{
+				"tab": {
+					"type": "image",
+					"size": [
+						"100%",
+						20
+					],
+					"anchor_from": "top_left",
+					"anchor_to": "top_left",
+					"texture": "textures/ui/Black",
+					"alpha": 0.4,
+					"color": "red"
+				}
+			},
+			{
+				"a2@common_toggles.light_ui_toggle": {
+					"alpha": 0,
+					"layer": 100,
+					"propagate_alpha": true,
+					"always_listen_to_input": true,
+					"$toggle_view_binding_name": "chest.tells_type",
+					"size": [
+						"100%",
+						"100%"
+					]
+				}
+			},
+			{
+				"button_image": {
+					"type": "stack_panel",
+					"orientation": "horizontal",
+					"size": [
+						"100%c",
+						20
+					],
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"controls": [
+						{
+							"chest": {
+								"type": "image",
+								"size": [
+									30,
+									20
+								],
+								"texture": "textures/ui/inventory_icon"
+							}
+						},
+						{
+							"a": {
+								"type": "image",
+								"size": [
+									15,
+									20
+								],
+								"fill": true,
+								"texture": "textures/ui/chevron_white_up",
+								"bindings": [
+									{
+										"binding_type": "view",
+										"source_control_name": "chest.tells_type",
+										"source_property_name": "#toggle_state",
+										"target_property_name": "#visible"
+									}
+								]
+							}
+						},
+						{
+							"b": {
+								"type": "image",
+								"size": [
+									15,
+									20
+								],
+								"fill": true,
+								"texture": "textures/ui/chevron_white_down",
+								"bindings": [
+									{
+										"binding_type": "view",
+										"source_control_name": "chest.tells_type",
+										"source_property_name": "(not #toggle_state)",
+										"target_property_name": "#visible"
+									}
+								]
+							}
+						},
+						{
+							"c@library.mode_label_panel": {
+								"$text": "ksby.insert",
+								"$source_property_name": "#toggle_state"
+							}
+						},
+						{
+							"d@library.mode_label_panel": {
+								"$text": "ksby.take",
+								"$source_property_name": "(not #toggle_state)"
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+	"background_bindings@library.background_render": {
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"size": [
+			"100% - 2px",
+			"100% - 2px"
+		],
+		"alpha": 0.5,
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "$toggle_view_binding_name",
+				"source_property_name": "$source_property_name",
+				"target_property_name": "#visible"
+			}
+		]
+	},
+	"mode_label_panel": {
+		"type": "panel",
+		"size": [
+			"100%c",
+			20
+		],
+		"controls": [
+			{
+				"fill": {
+					"type": "panel",
+					"size": [
+						8,
+						0
+					]
+				}
+			},
+			{
+				"text": {
+					"type": "label",
+					"size": [
+						"default",
+						"default"
+					],
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"color": "white",
+					"text": "$text"
+				}
+			}
+		],
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "chest.tells_type",
+				"source_property_name": "$source_property_name",
+				"target_property_name": "#visible"
+			}
+		]
+	}
+}

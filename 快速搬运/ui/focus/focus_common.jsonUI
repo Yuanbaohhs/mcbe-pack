@@ -1,0 +1,430 @@
+{
+	"namespace": "focus_common",
+	"common_panel_auto": {
+		"type": "panel",
+		"size": [
+			"100%",
+			"100%"
+		],
+		"$cell_selected_ignored": true,
+		"$player_inventory_ignored|default": true,
+		"controls": [
+			{
+				"user_auto_items@focus_common.user_auto_items": {
+					"ignored": "$player_inventory_ignored"
+				}
+			},
+			{
+				"edit_drop_button": {
+					"type": "stack_panel",
+					"anchor_from": "right_middle",
+					"anchor_to": "right_middle",
+					"size": [
+						61,
+						18
+					],
+					"offset": "$correct_offset",
+					"$correct_offset|default": [
+						-5,
+						-6
+					],
+					"layer": 10,
+					"orientation": "horizontal",
+					"controls": [
+						{
+							"text_edit_control": {
+								"type": "panel",
+								"size": [
+									35,
+									17
+								],
+								"controls": [
+									{
+										"text_edit_control@focus_common.text_edit_control": {
+											"anchor_from": "center",
+											"anchor_to": "center",
+											"size": [
+												"100%",
+												14
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"drop_auto_all_items@focus_common.drop_auto_all_items": {
+								"size": [
+									25,
+									17
+								]
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+	"chevron_white_up": {
+		"type": "image",
+		"size": [
+			15,
+			20
+		],
+		"fill": true,
+		"texture": "textures/ui/chevron_white_up",
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "chest.tells_type",
+				"source_property_name": "#toggle_state",
+				"target_property_name": "#visible"
+			}
+		],
+		"controls": [
+			{
+				"inf_hover_button@common.inf_hover_button": {
+					"$hover_background_renderer_ignored": true,
+					"$hover_label": "单击放入背包物品\n或者搜索的物品"
+				}
+			}
+		]
+	},
+	"trash_default": {
+		"type": "image",
+		"size": [
+			"100%",
+			"100% + 2px"
+		],
+		"alpha": 1.0,
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"texture": "textures/ui/trash_default",
+		"controls": [
+			{
+				"inf_hover_button@common.inf_hover_button": {
+					"$hover_background_renderer_ignored": false,
+					"$hover_label": "单击扔掉背包物品\n或者搜索的物品"
+				}
+			}
+		]
+	},
+	"auto_output_tertiary@common.inf_hover_button": {
+		"size": [
+			"100%",
+			"100%"
+		],
+		"offset": [
+			0,
+			-17
+		],
+		"$button_image_ignored": false,
+		"$hover_background_renderer_ignored": false,
+		"$textures": "textures/ui/hammer_r",
+		"$hover_label": "一键合成物品",
+		"anchor_from": "bottom_right",
+		"anchor_to": "bottom_right",
+		"$to_button_id": "button.crafting_output_tertiary",
+		"property_bag": {
+			"#collection_name": "crafting_output_items",
+			"#collection_index": 0
+		}
+	},
+	"common_panel_auto_items_template@focus_common.auto_items_template": {
+		"$cell_add|default": "focus_common.trash_default",
+		"size": "$auto_size",
+		"$auto_size": [
+			"100%",
+			"100%"
+		],
+		"$button_ref": "auto_common.drop_all",
+		"$super_collection_name": "inventory_items",
+		"$super_grid_item_template": "common.auto_grid_item_for_inventory"
+	},
+	"common_panel_redstone_auto_items_template@focus_common.auto_items_template": {
+		"$cell_add|default": "focus_common.chevron_white_up",
+		"size": "$auto_size",
+		"$auto_size": [
+			"100%",
+			"100%"
+		],
+		"$button_ref": "$common_panel_button_ref",
+		"$common_panel_button_ref|default": "auto_common.drop_all",
+		"$super_collection_name": "inventory_items",
+		"$super_grid_item_template": "common.auto_grid_item_for_inventory"
+	},
+	"drop_auto_all_items": {
+		"type": "panel",
+		"$add_button|default": "common.empty",
+		"$controls_button|default": "focus_common.common_panel_auto_items_template",
+		"controls": [
+			{
+				"add@$add_button": {}
+			},
+			{
+				"auto_items_template@$controls_button": {}
+			}
+		]
+	},
+	"edit_box": {
+		"type": "panel",
+		"size": [
+			"100%",
+			17
+		],
+		"offset": [
+			-20,
+			4
+		],
+		"layer": 10,
+		"controls": [
+			{
+				"text_edit_control@focus_common.text_edit_control": {}
+			}
+		]
+	},
+	"text_edit_control@common.text_edit_box": {
+		"size": [
+			"100%",
+			"100%"
+		],
+		"max_length": 300,
+		"$text_edit_text_control": "search_cell_item"
+	},
+	"container_auto_place": {
+		"type": "panel",
+		"controls": [
+			{
+				"container_auto_place@common.container_slot_button_prototype": {
+					"$cell_selected_ignored": true,
+					"$to_button_id|default": "button.container_auto_place",
+					"button_mappings": [
+						{
+							"from_button_id": "button.menu_select",
+							"to_button_id": "$to_button_id",
+							"mapping_type": "pressed"
+						}
+					]
+				}
+			}
+		],
+		"bindings": [
+			{
+				"binding_name": "#hover_text",
+				"binding_name_override": "#current_item_name",
+				"binding_type": "collection",
+				"binding_collection_name": "$item_collection_name"
+			},
+			{
+				"binding_type": "view",
+				"source_control_name": "search_cell_item",
+				"source_property_name": "#item_name",
+				"target_property_name": "#search_text"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "(#search_text = '')",
+				"target_property_name": "#air_search"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "(not ((#current_item_name - #search_text) = #current_item_name))",
+				"target_property_name": "#search_result"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "(#search_result or #air_search)",
+				"target_property_name": "#visible"
+			}
+		],
+		"property_bag": {
+			"#air_search": true,
+			"#search_result": false
+		}
+	},
+	"chest_auto_items": {
+		"type": "stack_panel",
+		"anchor_from": "top_right",
+		"anchor_to": "top_right",
+		"orientation": "horizontal",
+		"size": "$panel_size",
+		"$panel_size|default": [
+			71,
+			17
+		],
+		"$auto_size|default": [
+			35,
+			17
+		],
+		"offset": [
+			-70,
+			3
+		],
+		"$cell_alpha": 0,
+		"$container_button": "$auto_size",
+		"$inf_hover_button_ignored": false,
+		"$inf_hover_button_controls_offset": [
+			40,
+			-5
+		],
+		"controls": [
+			{
+				"auto_items_template@focus_common.auto_items_template": {
+					"$text": "ksby.quick_insertion",
+					"$button_ref": "focus_common.container_auto_place",
+					"$super_collection_name": "inventory_items",
+					"$super_grid_item_template": "common.auto_grid_item_for_inventory"
+				}
+			},
+			{
+				"fill_2": {
+					"type": "panel",
+					"size": [
+						1,
+						0
+					]
+				}
+			},
+			{
+				"auto_items_template2@focus_common.auto_items_template": {
+					"$text": "ksby.quick_retrieval",
+					"$button_ref": "focus_common.container_auto_place",
+					"$super_collection_name": "container_items",
+					"$super_grid_item_template": "chest.chest_grid_item"
+				}
+			}
+		]
+	},
+	"user_auto_items": {
+		"type": "panel",
+		"anchor_from": "top_right",
+		"anchor_to": "top_right",
+		"offset": [
+			-5,
+			5
+		],
+		"size": "$auto_size",
+		"$auto_size": [
+			25,
+			17
+		],
+		"$cell_alpha": 0,
+		"$crafting_screen_auto_ignored|default": true,
+		"$container_button": "$auto_size",
+		"controls": [
+			{
+				"inf_hover_button@common.inf_hover_button": {
+					"ignored": "(not $crafting_screen_auto_ignored)",
+					"$hover_label": "单击进行物品补位"
+				}
+			},
+			{
+				"auto_output_tertiary@common_buttons.light_text_button": {
+					"ignored": "$crafting_screen_auto_ignored",
+					"size": [
+						"100%",
+						"100%"
+					],
+					"layer": 100,
+					"$button_text": "合成",
+					"button_mappings": [
+						{
+							"from_button_id": "button.menu_select",
+							"to_button_id": "button.crafting_output_tertiary",
+							"mapping_type": "pressed"
+						},
+						{
+							"from_button_id": "button.menu_ok",
+							"to_button_id": "button.crafting_output_tertiary",
+							"mapping_type": "pressed"
+						}
+					],
+					"property_bag": {
+						"#collection_name": "crafting_output_items",
+						"#collection_index": 0
+					}
+				}
+			},
+			{
+				"auto_items_template@focus_common.auto_items_template": {
+					"ignored": "(not $crafting_screen_auto_ignored)",
+					"$text": "ksby.tab_fill",
+					"$button_ref": "focus_common.container_auto_place",
+					"$super_collection_name": "inventory_items",
+					"$super_grid_item_template": "common.auto_grid_item_for_inventory"
+				}
+			}
+		]
+	},
+	"cell_button@common_buttons.light_text_button": {
+		"size": [
+			"100%",
+			"100%"
+		],
+		"layer": 20,
+		"always_listen_to_input": true,
+		"always_handle_pointer": "$super_mode",
+		"$button_text": "$text",
+		"$text|default": "§r"
+	},
+	"auto_items_template": {
+		"type": "panel",
+		"$auto_size|default": [
+			"100%",
+			"100%"
+		],
+		"size": "$auto_size",
+		"$inf_hover_button_ignored|default": true,
+		"$cell_add|default": "focus_common.cell_button",
+		"$super_collection_name|default": "inventory_items",
+		"$super_grid_item_template|default": "common.auto_grid_item_for_inventory",
+		"controls": [
+			{
+				"$cell_add@$cell_add": {}
+			},
+			{
+				"inf_hover_button@common.inf_hover_button": {
+					"ignored": "$inf_hover_button_ignored",
+					"$hover_label": "单击来快速搬运物品"
+				}
+			},
+			{
+				"grid": {
+					"type": "panel",
+					"size": [
+						"100%",
+						"100%"
+					],
+					"anchor_from": "top_middle",
+					"anchor_to": "top_middle",
+					"controls": [
+						{
+							"背包界面2": {
+								"type": "grid",
+								"anchor_from": "center",
+								"anchor_to": "center",
+								"$super_mode": true,
+								"$cell_controls_visible": true,
+								"size": [
+									0,
+									0
+								],
+								"offset": [
+									-9,
+									-9
+								],
+								"layer": 0,
+								"grid_dimensions": [
+									1,
+									54
+								],
+								"grid_item_template": "$super_grid_item_template",
+								"collection_name": "$super_collection_name"
+							}
+						}
+					]
+				}
+			}
+		]
+	}
+}

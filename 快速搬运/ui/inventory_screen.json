@@ -1,0 +1,14 @@
+{
+	"inventory_screen": {
+		"$player_inventory_ignored": true,
+		"$add_button":"focus_common.auto_output_tertiary"
+	},
+	"crafting_screen": {
+		"$player_inventory_ignored": true,
+		"$crafting_screen_auto_ignored": false
+	},
+	"player_inventory/common_panel": {
+		"$player_inventory_ignored": false,
+		"$add": "focus_common.common_panel_auto"
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"namespace": "chest",
+	"tells_type@settings_common.option_toggle_control": {
+		"$toggle_name": "tells_type"
+	},
+	"small_chest_panel": {
+		"$add": "focus_common.chest_auto_items"
+	},
+	"large_chest_panel": {
+		"$add": "focus_common.chest_auto_items"
+	},
+	"auto_chest_grid_item@common.自动槽位": {
+		"$item_collection_name": "container_items"
+	}
+}

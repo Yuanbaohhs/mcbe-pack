@@ -1,0 +1,10 @@
+{
+	"namespace": "trade2",
+	"trade_toggle_holder": {
+		"controls": [
+			{
+				"trade_toggle@trade_toggle": {}
+			}
+		]
+	}
+}

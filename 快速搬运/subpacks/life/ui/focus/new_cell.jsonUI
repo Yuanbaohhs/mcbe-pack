@@ -1,0 +1,71 @@
+{
+	"namespace": "new_cell",
+	"cell_template": {
+		"type": "input_panel",
+		"size": [
+			0,
+			0
+		],
+		"layer": 1,
+		"controls": [
+			{
+				"item_button_ref@$item_button_ref": {}
+			}
+		]
+	},
+	"slot_button": {
+		"type": "input_panel",
+		"prevent_touch_input": true,
+		"size": "$cell_size",
+		"controls": [
+			{
+				"slot_button@common.container_slot_button_prototype": {
+					"$item_collection_name|default": "$collection_name",
+					"size": "$cell_size",
+					"$super_mode|default": true,
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"button_mappings": [
+						{
+							"from_button_id": "button.menu_select",
+							"to_button_id": "$to_button_id",
+							"mapping_type": "pressed"
+						}
+					]
+				}
+			}
+		]
+	},
+	"new_test_panel": {
+		"type": "input_panel",
+		"size": "$cell_size",
+		"$cell_size|default": [
+			100,
+			100
+		],
+		"prevent_touch_input": true,
+		"$collection_name|default": "inventory_items",
+		"$item_button_ref|default": "new_cell.slot_button",
+		"controls": [
+			{
+				"cell": {
+					"type": "grid",
+					"size": [
+						"0px",
+						"0px"
+					],
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"grid_dimensions": "$grid_dimensions",
+					"$grid_dimensions|default": [
+						1,
+						27
+					],
+					"grid_item_template": "new_cell.cell_template",
+					"$item_collection_name": "$collection_name",
+					"collection_name": "$collection_name"
+				}
+			}
+		]
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"ui_defs": [
+		"ui/focus/focus_common.jsonUI",
+		"ui/focus/auto.jsonUI",
+		"ui/focus/new_cell.jsonUI",
+		"library.jsonUI"
+	]
+}

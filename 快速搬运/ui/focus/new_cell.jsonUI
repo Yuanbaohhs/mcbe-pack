@@ -1,0 +1,108 @@
+{
+	"namespace": "new_cell",
+	"cell_template": {
+		"type": "input_panel",
+		"size": [
+			0,
+			0
+		],
+		"layer": 1,
+		"controls": [
+			{
+				"item_button_ref@$item_button_ref": {}
+			}
+		]
+	},
+	"auto_totem_slot_button": {
+		"type": "panel",
+		"size": "$cell_size",
+		"$cell_size": [
+			100,
+			100
+		],
+		"$super_mode": false,
+		"$item_button_ref": "new_cell.totem_slot_button",
+		"controls": [
+			{
+				"a@new_cell.new_test_panel": {
+					"$to_button_id": "button.container_auto_place",
+					"$collection_name": "hotbar_items"
+				}
+			},
+			{
+				"b@new_cell.new_test_panel": {
+					"$to_button_id": "button.container_auto_place",
+					"$collection_name": "inventory_items"
+				}
+			}
+		]
+	},
+	"totem_slot_button@new_cell.slot_button": {
+		"bindings": [
+			{
+				"binding_name": "#item_id_aux",
+				"binding_type": "collection",
+				"binding_collection_name": "$item_collection_name"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "((#item_id_aux / 65536) = 577))",
+				"target_property_name": "#visible"
+			}
+		]
+	},
+	"slot_button": {
+		"type": "input_panel",
+		"prevent_touch_input": true,
+		"size": "$cell_size",
+		"controls": [
+			{
+				"slot_button@common.container_slot_button_prototype": {
+					"$item_collection_name|default": "$collection_name",
+					"size": "$cell_size",
+					"$super_mode|default": true,
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"button_mappings": [
+						{
+							"from_button_id": "button.menu_select",
+							"to_button_id": "$to_button_id",
+							"mapping_type": "pressed"
+						}
+					]
+				}
+			}
+		]
+	},
+	"new_test_panel": {
+		"type": "input_panel",
+		"size": "$cell_size",
+		"$cell_size|default": [
+			100,
+			100
+		],
+		"prevent_touch_input": true,
+		"$collection_name|default": "inventory_items",
+		"$item_button_ref|default": "new_cell.slot_button",
+		"controls": [
+			{
+				"cell": {
+					"type": "grid",
+					"size": [
+						"0px",
+						"0px"
+					],
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"grid_dimensions": [
+						1,
+						54
+					],
+					"grid_item_template": "new_cell.cell_template",
+					"$item_collection_name": "$collection_name",
+					"collection_name": "$collection_name"
+				}
+			}
+		]
+	}
+}

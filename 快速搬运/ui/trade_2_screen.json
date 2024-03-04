@@ -1,0 +1,240 @@
+{
+	"namespace": "trade2",
+	"right_panel/common_panel": {
+		"$player_inventory_ignored": true,
+		"$add": "focus_common.common_panel_auto"
+	},
+	"trade_toggle_holder": {
+		"type": "panel",
+		"size": [
+			"100%",
+			"100%c - 1px"
+		],
+		"controls": [
+			{
+				"trade_toggle@super_auto_trade_toggle": {}
+			}
+		]
+	},
+	"super_auto_trade_toggle": {
+		"type": "stack_panel",
+		"size": [
+			"100%",
+			"23px"
+		],
+		"orientation": "horizontal",
+		"controls": [
+			{
+				"button@trade2.left_auto_button": {}
+			},
+			{
+				"trade_toggle@trade2.trade_toggle": {
+					"size": [
+						"100% - 23px",
+						"100%"
+					]
+				}
+			}
+		]
+	},
+	"super_auto_trade_button": {
+		"type": "button",
+		"always_listen_to_input": "$super_mode",
+		"always_handle_pointer": "$super_mode",
+		"property_bag": {
+			"#collection_name": "crafting_output_items",
+			"#collection_index": 0
+		},
+		"button_mappings": [
+			{
+				"from_button_id": "button.menu_select",
+				"to_button_id": "button.crafting_output_tertiary",
+				"mapping_type": "pressed"
+			},
+			{
+				"from_button_id": "button.menu_ok",
+				"to_button_id": "button.crafting_output_tertiary",
+				"mapping_type": "pressed"
+			}
+		]
+	},
+	"auto_trade_button": {
+		"type": "button",
+		"always_listen_to_input": "$super_mode",
+		"always_handle_pointer": "$super_mode",
+		"$to_button_id": "button.trade",
+		"button_mappings": [
+			{
+				"from_button_id": "button.menu_select",
+				"to_button_id": "$to_button_id",
+				"mapping_type": "pressed"
+			},
+			{
+				"from_button_id": "button.menu_ok",
+				"to_button_id": "$to_button_id",
+				"mapping_type": "pressed"
+			}
+		]
+	},
+	"trade_air_toggle_button@common_toggles.light_image_toggle_collection": {
+		"layer": 2,
+		"$toggle_name": "trade_toggle",
+		"$ignored_toggle_content": true,
+		"$template_toggle": "trade2.trade_actual_toggle"
+	},
+	"trade_toggle": {
+		"$toggle_enabled_binding_name": ""
+	},
+	"tier_stack_panel": {
+		"bindings": []
+	},
+	"left_auto_button_label": {
+		"type": "label",
+		"font_scale_factor": 0.9,
+		"text": "Auto",
+		"shadow": true,
+		"layer": 20,
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"size": [
+			"default",
+			"default"
+		]
+	},
+	"left_auto_button": {
+		"type": "panel",
+		"size": [
+			"23px",
+			"23px"
+		],
+		"$super_mode": true,
+		"controls": [
+			{
+				"background": {
+					"type": "image",
+					"size": [
+						"100% - 1px",
+						"100% - 1px"
+					],
+					"layer": 8,
+					"alpha": 0.7,
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"texture": "textures/ui/Black"
+				}
+			},
+			{
+				"controls": {
+					"type": "image",
+					"size": [
+						"100% - 1px",
+						"100% - 1px"
+					],
+					"layer": 10,
+					"alpha": 1.0,
+					"anchor_from": "center",
+					"anchor_to": "center",
+					"texture": "textures/ui/trade_icon"
+				}
+			},
+			{
+				"trade_toggle@trade2.trade_air_toggle_button": {
+					"always_listen_to_input": "$super_mode",
+					"always_handle_pointer": "$super_mode",
+					"alpha": 0,
+					"propagate_alpha": true,
+					"size": [
+						"100%",
+						"100%"
+					]
+				}
+			},
+			{
+				"auto_trade_button@superposition_auto_trade_button": {}
+			},
+			{
+				"auto_trade_button2@superposition_auto_trade_button": {}
+			},
+			{
+				"auto_trade_button3@superposition_auto_trade_button": {}
+			}
+		]
+	},
+	"superposition_auto_trade_button": {
+		"type": "panel",
+		"controls": [
+			{
+				"auto_trade_button@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button2@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button3@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button4@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button5@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button6@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button7@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button8@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button9@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button10@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button11@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button12@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button13@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button14@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button15@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button16@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button17@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button18@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button19@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button20@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button21@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button22@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button23@auto_trade_button": {}
+			},
+			{
+				"auto_trade_button24@auto_trade_button": {}
+			}
+		]
+	}
+}

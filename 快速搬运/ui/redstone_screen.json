@@ -1,0 +1,47 @@
+{
+	"namespace": "redstone",
+	"hopper_screen": {
+		"$correct_offset": [
+			-5,
+			-21
+		],
+		"$player_inventory_ignored": true,
+		"$controls_button": "focus_common.common_panel_redstone_auto_items_template",
+		"$cell_add": "focus_common.chevron_white_up",
+		"$common_panel_button_ref": "auto_common.auto_all",
+		"$add": "focus_common.common_panel_auto"
+	},
+	"dispenser_screen": {
+		"$correct_offset": [
+			-5,
+			-5
+		],
+		"$player_inventory_ignored": true,
+		"$controls_button": "focus_common.common_panel_redstone_auto_items_template",
+		"$cell_add": "focus_common.chevron_white_up",
+		"$common_panel_button_ref": "auto_common.auto_all",
+		"$add": "focus_common.common_panel_auto"
+	},
+	"crafter_screen": {
+		"$correct_offset": [
+			-5,
+			-5
+		],
+		"$player_inventory_ignored": true,
+		"$controls_button": "focus_common.common_panel_redstone_auto_items_template",
+		"$cell_add": "focus_common.chevron_white_up",
+		"$common_panel_button_ref": "auto_common.auto_all",
+		"$add": "focus_common.common_panel_auto"
+	},
+	"dropper_screen": {
+		"$correct_offset": [
+			-5,
+			-5
+		],
+		"$player_inventory_ignored": true,
+		"$controls_button": "focus_common.common_panel_redstone_auto_items_template",
+		"$cell_add": "focus_common.chevron_white_up",
+		"$common_panel_button_ref": "auto_common.auto_all",
+		"$add": "focus_common.common_panel_auto"
+	}
+}

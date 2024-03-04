@@ -1,0 +1,76 @@
+{
+	"format_version": 2,
+	"header": {
+		"description": "§7v5.1\n快速搬运背包和箱子等容器物品。点击齿轮查看更多。",
+		"name": "§l§b快速搬运-快速物品操作",
+		"uuid": "fffffffb-fffb-ffaa-efff-ffffffffbfbb",
+		"version": [
+			1,
+			0,
+			0
+		],
+		"min_engine_version": [
+			1,
+			13,
+			0
+		]
+	},
+	"modules": [
+		{
+			"description": "resourcePack.vanilla.description",
+			"type": "resources",
+			"uuid": "fffffff4-abbf-ffaf-bfff-fffbfffffccf",
+			"version": [
+				0,
+				0,
+				1
+			]
+		}
+	],
+    "subpacks": [
+        {
+            "folder_name": "life",
+            "name": "适配\n模式：精简\n仅箱子快速拿取按钮和背包按钮",
+            "memory_tier": -1
+        },
+        {
+            "folder_name": "default",
+            "name": "适配\n模式：默认\n完整的UI",
+            "memory_tier": 0
+        }
+    ],
+    "settings": [
+        {
+            "type": "label",
+            "text": "§e适应版本 1.19+"
+        },
+        {
+            "type": "label",
+            "text": "§e1.18版本请使用旧版适配版本。"
+        },
+        {
+            "type": "label",
+            "text": "§e支持操作：键盘鼠标/触屏"
+        },
+        {
+            "type": "label",
+            "text": "§eb站 孤独的作者  b站主页 https://b23.tv/4U5Mc5a"
+        },
+        {
+            "type": "label",
+            "text": "§e注：目前暂不支持携带版UI来进行快捷操作，可以切换到经典模式UI来给你带来完整UI体验。"
+        },
+        {
+            "type": "label",
+            "text": "§e实用工具 资源反馈群聊 一群：706394714 二群：797581774" 
+        },
+        {
+            "type": "label",
+            "text": "§eby YuanBao_LSR 未经允许，禁止转发。"
+        },
+        {
+            "type": "label",
+            "text": "======================"
+        }
+    ]
+}

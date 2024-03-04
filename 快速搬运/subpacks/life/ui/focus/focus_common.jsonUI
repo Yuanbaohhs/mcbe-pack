@@ -1,0 +1,160 @@
+{
+	"namespace": "focus_common",
+	"container_auto_place@common.container_slot_button_prototype": {
+		"$to_button_id|default": "button.container_auto_place",
+		"button_mappings": [
+			{
+				"from_button_id": "button.menu_select",
+				"to_button_id": "$to_button_id",
+				"mapping_type": "pressed"
+			}
+		]
+	},
+	"chest_auto_items": {
+		"type": "stack_panel",
+		"ignored": "$is_pregame",
+		"anchor_from": "top_right",
+		"anchor_to": "top_right",
+		"orientation": "horizontal",
+		"size": [
+			92,
+			17
+		],
+		"$auto_size": [
+			45,
+			17
+		],
+		"offset": [
+			-20,
+			3
+		],
+		"$cell_alpha": 0,
+		"$container_button": "$auto_size",
+		"controls": [
+			{
+				"auto_items_template@focus_common.auto_items_template": {
+					"$text": "ksby.quick_insertion",
+					"$button_ref": "focus_common.container_auto_place",
+					"$super_collection_name": "inventory_items",
+					"$super_grid_item_template": "common.auto_grid_item_for_inventory"
+				}
+			},
+			{
+				"fill_2": {
+					"type": "panel",
+					"size": [
+						2,
+						0
+					]
+				}
+			},
+			{
+				"auto_items_template2@focus_common.auto_items_template": {
+					"$text": "ksby.quick_retrieval",
+					"$button_ref": "focus_common.container_auto_place",
+					"$super_collection_name": "container_items",
+					"$super_grid_item_template": "chest.chest_grid_item"
+				}
+			}
+		]
+	},
+	"user_auto_items": {
+		"type": "panel",
+		"anchor_from": "top_right",
+		"anchor_to": "top_right",
+		"offset": [
+			-5,
+			5
+		],
+		"size": "$auto_size",
+		"$auto_size": [
+			25,
+			17
+		],
+		"$cell_alpha": 0,
+		"$container_button": "$auto_size",
+		"controls": [
+			{
+				"fill_2": {
+					"type": "panel",
+					"size": [
+						55,
+						0
+					]
+				}
+			},
+			{
+				"auto_items_template@focus_common.auto_items_template": {
+					"$text": "ksby.tab_fill",
+					"$button_ref": "focus_common.container_auto_place",
+					"$super_collection_name": "inventory_items",
+					"$super_grid_item_template": "common.auto_grid_item_for_inventory"
+				}
+			}
+		]
+	},
+	"cell_button@common_buttons.light_text_button": {
+		"size": [
+			"100%",
+			"100%"
+		],
+		"layer": 20,
+		"always_listen_to_input": true,
+		"always_handle_pointer": "$super_mode",
+		"$button_text": "$text",
+		"$text|default": "§r"
+	},
+	"auto_items_template": {
+		"type": "panel",
+		"$auto_size|default": [
+			"100%",
+			"100%"
+		],
+		"size": "$auto_size",
+		"$cell_add|default": "focus_common.cell_button",
+		"$super_collection_name|default": "inventory_items",
+		"$super_grid_item_template|default": "common.auto_grid_item_for_inventory",
+		"controls": [
+			{
+				"$cell_add@$cell_add": {}
+			},
+			{
+				"grid": {
+					"type": "panel",
+					"size": [
+						"100%",
+						"100%"
+					],
+					"anchor_from": "top_middle",
+					"anchor_to": "top_middle",
+					"controls": [
+						{
+							"背包界面2": {
+								"type": "grid",
+								"anchor_from": "center",
+								"anchor_to": "center",
+								"$super_mode": true,
+								"$cell_controls_visible": true,
+								"size": [
+									0,
+									0
+								],
+								"offset": [
+									-9,
+									-9
+								],
+								"layer": 0,
+								"grid_dimensions": [
+									1,
+									54
+								],
+								"grid_item_template": "$super_grid_item_template",
+								"collection_name": "$super_collection_name"
+							}
+						}
+					]
+				}
+			}
+		]
+	}
+}
