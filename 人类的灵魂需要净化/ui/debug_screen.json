@@ -1,0 +1,10 @@
+{
+	"namespace": "debug_screen",
+	"content_panel": {
+		"type": "panel",
+		"size": [
+			"100%",
+			"100%"
+		]
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"game": {
+		"event_name": "music.ussr",
+		"min_delay": 600,
+		"max_delay": 1200
+	},
+	"water": {
+		"event_name": "music.ussr",
+		"min_delay": 10,
+		"max_delay": 20
+	},
+	"creative": {
+		"event_name": "music.ussr",
+		"min_delay": 60,
+		"max_delay": 180
+	},
+	"end": {
+		"event_name": "music.ussr",
+		"min_delay": 60,
+		"max_delay": 180
+	},
+	"endboss": {
+		"event_name": "music.ussr",
+		"min_delay": 60,
+		"max_delay": 180
+	},
+	"nether": {
+		"event_name": "music.ussr",
+		"min_delay": 60,
+		"max_delay": 180
+	},
+	"credits": {
+		"event_name": "music.ussr",
+		"min_delay": 0,
+		"max_delay": 0
+	},
+	"menu": {
+		"event_name": "music.ussr",
+		"min_delay": 0,
+		"max_delay": 30
+	}
+}

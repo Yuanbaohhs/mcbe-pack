@@ -1,0 +1,13 @@
+{
+	"music.ussr": {
+		"category": "music",
+		"sounds": [
+			{
+				"name": "sounds/ussr/ussr",
+				"stream": true,
+				"volume": 1,
+				"load_on_low_memory": true
+			}
+		]
+	}
+}

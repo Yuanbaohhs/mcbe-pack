@@ -1,0 +1,55 @@
+{
+	"namespace": "start",
+	"start_screen_content": {
+		"type": "input_panel",
+		"size": [
+			"100%",
+			"100%"
+		],
+		"prevent_touch_input": false,
+		"controls": [
+			{
+				"Black": {
+					"type": "image",
+					"size": [
+						"100%",
+						"100%"
+					],
+					"texture": "textures/start/ussr",
+					"layer": 10000,
+					"anims": [
+						"@a"
+					],
+					"color": [
+						1,
+						1,
+						1
+					],
+					"alpha": 0.6,
+					"animation_reset_name": "screen_animation_reset"
+				}
+			}
+		]
+	},
+	"a": {
+		"anim_type": "alpha",
+		"from": 1,
+		"to": 0,
+		"next": "@b",
+		"easing": "out_cubic",
+		"duration": 0
+	},
+	"b": {
+		"anim_type": "wait",
+		"next": "@c",
+		"duration": 0.01
+	},
+	"c": {
+		"anim_type": "alpha",
+		"from": 0,
+		"to": 1,
+		"next": "@a",
+		"easing": "out_cubic",
+		"duration": 0
+	}
+}
